@@ -2,6 +2,10 @@
 function generatePassword($length)
 {
     $chars = 'ABCDEFFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()-_=+0123456789';
+    // $upperCase = 'ABCDEFFGHIJKLMNOPQRSTUVWXYZ';
+    // $smallCase = 'abcdefghijklmnopqrstuvwxyz';
+    // $numbers = '0123456789';
+    // $symbols = '!@#$%^&*()-_=+';
     $password = '';
 
     for ($i = 0; $i < $length; $i++) {

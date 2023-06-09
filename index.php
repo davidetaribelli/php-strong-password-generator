@@ -29,6 +29,18 @@ if (isset($_GET['length'])) {
                     <label class="my-3" for="length">Scegli la lunghezza:</label>
                     <input type="number" id="length" name="length" min="8" max="15">
                     <br>
+                    <label for="upperCase">Lettere maiuscole:</label>
+                    <input type="checkbox" id="upperCase" name="upperCase">
+                    <br>
+                    <label for="smallCase">Lettere minuscole:</label>
+                    <input type="checkbox" id="smallCase" name="smallCase">
+                    <br>
+                    <label for="numbers">Numeri:</label>
+                    <input type="checkbox" id="numbers" name="numbers">
+                    <br>
+                    <label for="symbols">Simboli:</label>
+                    <input type="checkbox" id="symbols" name="symbols">
+                    <br>
                     <button class="border-0 bg-light rounded-3" type="submit">GENERATE</button>
                 </form>
             </div>
