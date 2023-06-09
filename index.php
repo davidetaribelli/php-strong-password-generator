@@ -20,7 +20,11 @@ if (isset($_GET['length'])) {
         <div class="row justify-content-center">
             <div class="col-7 bg-primary text-white rounded-3 d-flex flex-column p-3">
                 <form action="index.php" method="GET">
-                    <p class="w-100 rounded-3 border-3 bg-white text-black"> La tua password è: <?php echo $generatePassword; ?> </p>
+                    <?php
+                        session_start();
+                        $_SESSION["password"] = $generatePassword;
+                    ?>
+                    <a class="text-white" href="password.php">Clicca qui per Password</a>
                     <br>
                     <label class="my-3" for="length">Scegli la lunghezza:</label>
                     <input type="number" id="length" name="length" min="8" max="15">
