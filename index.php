@@ -1,7 +1,14 @@
 <?php
 include './functions.php';
 if (isset($_GET['length'])) {
-    $generatePassword = generatePassword($_GET['length']);
+    $repetition = $_GET['repetition'];
+    $upperChars = $_GET['upperCase'];
+    $lowerChars = $_GET['lowerCase'];
+    $numbersChars = $_GET['numbers'];
+    $symbolsChars = $_GET['symbols'];
+
+    $generatePassword = generatePassword($_GET['length'], $repetition, $upperChars, $lowerChars, $numbersChars, $symbolsChars);
+    
 }
 
 ?>
@@ -27,19 +34,25 @@ if (isset($_GET['length'])) {
                     <a class="text-white" href="password.php">Clicca qui per Password</a>
                     <br>
                     <label class="my-3" for="length">Scegli la lunghezza:</label>
-                    <input type="number" id="length" name="length" min="8" max="15">
+                    <input type="number" id="length" name="length" min="8" max="32" value="10">
+                    <br>
+                    <label for="repetition">Consenti ripetizioni di caratteri</label>
+                    <select name="repetition" id="repetition" class="form-select">
+                        <option selected value="1">Si</option>
+                        <option value="0">No</option>
+                    </select>
                     <br>
                     <label for="upperCase">Lettere maiuscole:</label>
-                    <input type="checkbox" id="upperCase" name="upperCase">
+                    <input type="checkbox" id="upperCase" name="upperCase" value="1" checked>
                     <br>
-                    <label for="smallCase">Lettere minuscole:</label>
-                    <input type="checkbox" id="smallCase" name="smallCase">
+                    <label for="lowerCase">Lettere minuscole:</label>
+                    <input type="checkbox" id="lowerCase" name="lowerCase" value="1" checked>
                     <br>
                     <label for="numbers">Numeri:</label>
-                    <input type="checkbox" id="numbers" name="numbers">
+                    <input type="checkbox" id="numbers" name="numbers" value="1">
                     <br>
                     <label for="symbols">Simboli:</label>
-                    <input type="checkbox" id="symbols" name="symbols">
+                    <input type="checkbox" id="symbols" name="symbols" value="1">
                     <br>
                     <button class="border-0 bg-light rounded-3" type="submit">GENERATE</button>
                 </form>
