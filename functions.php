@@ -10,7 +10,7 @@ function generatePassword($length)
 
     for ($i = 0; $i < $length; $i++) {
         // Seleziono un carattere casuale dalla lista dei caratteri disponibili
-        $randomChars = rand(0, strlen($chars));
+        $randomChars = rand(0, strlen($chars - 1 ));
         // Passo i caratteri selezionati a password
         $password .= $chars[$randomChars];
     }
